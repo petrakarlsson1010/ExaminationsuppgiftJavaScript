@@ -1,0 +1,17 @@
+body {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+.frågor{
+    background-color: rgb(31, 105, 64);
+    width: 90%;
+    height: 120px;
+    margin: 10px;
+}
+.nästaBtn{
+    border-radius: 5px;
+}
