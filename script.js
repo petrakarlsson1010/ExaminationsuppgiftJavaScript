@@ -1,4 +1,4 @@
-let frågor = [
+let quizet = [
     {
         fråga: "Finns jultomten?",
         svarsalternativ: ["Självklart", "Bara barn tror på tomten"],
@@ -6,7 +6,7 @@ let frågor = [
     },
     {
         fråga: "Hur många renar har jultomten?",
-        svartalternativ: ["Tomten har 9 renar", "Tomten har 12 renar"],
+        svarsalternativ: ["Tomten har 9 renar", "Tomten har 12 renar"],
         rättsvar: "Tomten har 9 renar",
     },
     {
@@ -45,17 +45,18 @@ let frågor = [
         rättsvar: "Ankomst",
     },
     {
-        fråga: "Vilken dag ska man kasta ut julgranen?"
+        fråga: "Vilken dag ska man kasta ut julgranen?",
         svarsalternativ: ["Trettondagen", "Tjugondag knut"],
         rättsvar: "Tjugondag knut",
     },
 ]
+window.onload = function() {
 
 let frågor = document.querySelectorAll(".frågor");
-let nästabtn = document.querySelectorAll(".nästaBtm");
+let nästabtn = document.querySelectorAll(".nästaBtn");
 
 for (let i = 0; i <nästabtn.length; i++){
-    nästabtn(i).onclick = function(){
+    nästabtn[i].onclick = function(){
 
         frågor[i].style.display = "none";
         if (frågor[i+1]){
@@ -63,3 +64,4 @@ for (let i = 0; i <nästabtn.length; i++){
         }
     };
 }
+};

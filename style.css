@@ -12,8 +12,9 @@ body {
     height: 120px;
     margin: 10px;
     display: none;
+   
 }
-.frågor:first-child{
+.frågor:first-child(2){
     display: block;
 }
 .nästaBtn{
