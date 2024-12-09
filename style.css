@@ -11,6 +11,10 @@ body {
     width: 90%;
     height: 120px;
     margin: 10px;
+    display: none;
+}
+.frågor:nth-child(2){
+    display: block;
 }
 .nästaBtn{
     border-radius: 5px;
