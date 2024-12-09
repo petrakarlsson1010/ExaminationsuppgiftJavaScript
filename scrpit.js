@@ -50,3 +50,16 @@ let frågor = [
         rättsvar: "Tjugondag knut",
     },
 ]
+
+let frågor = document.querySelectorAll(".frågor");
+let nästabtn = document.querySelectorAll(".nästaBtm");
+
+for (let i = 0; i <nästabtn.length; i++){
+    nästabtn(i).onclick = function(){
+
+        frågor[i].style.display = "none";
+        if (frågor[i+1]){
+            frågor[i+1].style.display = "block";
+        }
+    };
+}

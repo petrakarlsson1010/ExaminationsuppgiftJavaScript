@@ -13,7 +13,7 @@ body {
     margin: 10px;
     display: none;
 }
-.frågor:nth-child(2){
+.frågor:first-child{
     display: block;
 }
 .nästaBtn{
