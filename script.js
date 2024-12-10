@@ -55,13 +55,20 @@ window.onload = function() {
 let frågor = document.querySelectorAll(".frågor");
 let nästabtn = document.querySelectorAll(".nästaBtn");
 
+/*Fungerar inte.... 
 for (let i = 0; i <nästabtn.length; i++){
     nästabtn[i].onclick = function(){
+      if(rättsvar<frågor.length * 0.5){
+        console.log("Du har fått mindre än 50% rätt");
+      }  
+      else if(rättsvar <= frågor.length * 0.78){
+        console.log("Du har fått mer än 50% rätt");
+      }
+      else{
+        console.log("Du har fått mer än 70% rätt");
+      }
 
-        frågor[i].style.display = "none";
-        if (frågor[i+1]){
-            frågor[i+1].style.display = "block";
-        }
     };
-}
+} */
+
 };
