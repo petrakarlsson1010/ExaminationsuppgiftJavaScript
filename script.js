@@ -54,6 +54,26 @@ window.onload = function() {
 
 let frågor = document.querySelectorAll(".frågor");
 let nästabtn = document.querySelectorAll(".nästaBtn");
+let svar = frågor(i).querySelectorAll("input:checked");
+
+/*Styr knapptryckning på divarna, (vid tryck) borde
+diven försvinna och man kan gå vidare till nästa fråga. 
+fungerade förut men fungerar inte längre! Varför?*/
+for (let i = 0; i <nästabtn.length; i++){
+    nästabtn(i).onclick = function(){
+
+        frågor[i].style.display = "none";
+        if (frågor[i+1]){
+            frågor[i+1].style.display = "block";
+        }
+    }
+//Borde styra poängräkningen, får den inte att fungera. 
+for (let i = 0; i <frågor.length; i++){
+    if (svar && svar.valu === (i).rättsvar){
+        poäng++;
+        }
+    }
+}
 
 /*Fungerar inte.... 
 for (let i = 0; i <nästabtn.length; i++){
