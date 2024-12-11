@@ -54,42 +54,46 @@ window.onload = function() {
 
 let frågor = document.querySelectorAll(".frågor");
 let nästabtn = document.querySelectorAll(".nästaBtn");
-let resultat = document.getElementsByClassName(".resultat");
+let resultat = document.querySelector(".resultat");
 let aktuelfråga = 0;
 let poäng = 0;
 
+console.log(nästabtn);
+
 frågor[aktuelfråga].style.display = "block";
 
-/*Styr knapptryckning på divarna, (vid tryck) borde
-diven försvinna och man kan gå vidare till nästa fråga. 
-fungerade förut men fungerar inte längre! Varför?*/
+
 for (let i = 0; i < nästabtn.length; i++){
-    nästabtn[i].onclick = function(){
-        let val = frågor[i].querySelector("input[type='radio']:checked");
-
-        if (svar && svar.value === quizet[i].rättsvar){
-            poäng++;
-            }  
-      } 
-
+    
+    nästabtn[i].addEventListener("click", function(){
+        let svar = frågor[aktuelfråga].querySelector("input[type='radio']:checked"); 
         
-//Borde styra poängräkningen, får den inte att fungera. 
-
-for (let i = 0; i <frågor.length; i++){
-    
-    let svar = frågor[i].querySelector("input:checked");
-    
-    
+        if (svar && svar.value === quizet[aktuelfråga].rättsvar) {
+        poäng++;
     }
-if (poäng < frågor.length * 0.5){
-    meddelande("Du fick: " + poäng + ",vilket är mindre än 50% rätt.");
-}else if(poäng <= frågor.length * 0.75){
-    meddelande("Du fick :" + poäng + ". Det är mer än 50% rätt.");
-}else{
-    meddelande("Du fick :" + poäng + "Det är mer än 75% rätt.");
-};
-resultat.style.displey = "block";
-};
+
+ 
+    frågor[aktuelfråga].style.display = "none";
+    aktuelfråga++;
+
+    if (aktuelfråga <frågor.length) {
+    frågor[aktuelfråga].style.display = "block";
+    } else {
+        resultat.style.display = "block";
+
+        let meddelande = "";
+    
+        if (poäng < quizet.length * 0.5) {
+            meddelande = "Du fick: " + poäng + ",vilket är mindre än 50% rätt.";
+        } else if (poäng <= quizet.length  * 0.75) {
+            meddelande = "Du fick :" + poäng + ". Det är mer än 50% rätt.";
+        } else {
+            meddelande = "Du fick :" + poäng + "Det är mer än 75% rätt.";
+        }
+        resultat.innerHTML = meddelande;
+        }
+    });
 }
+};
 
 
