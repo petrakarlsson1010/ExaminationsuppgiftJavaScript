@@ -21,6 +21,12 @@ alla divar.....*/
 .frågor:first-child(2){
     display: block;
 }
+.resultat{
+    background-color: rgb(31, 105, 64);
+    width: 90%;
+    height: 120px;
+    margin: 10px;
+}
 .nästaBtn{
     border-radius: 5px;
 }
