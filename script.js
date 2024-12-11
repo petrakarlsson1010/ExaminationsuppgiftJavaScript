@@ -80,17 +80,24 @@ for (let i = 0; i < nästabtn.length; i++){
     frågor[aktuelfråga].style.display = "block";
     } else {
         resultat.style.display = "block";
+        
 
         let meddelande = "";
+        let bakgrundsfärg = "";
     
         if (poäng < quizet.length * 0.5) {
             meddelande = "Du fick: " + poäng + ",vilket är mindre än 50% rätt.";
+            bakgrundsfärg = "red";
         } else if (poäng <= quizet.length  * 0.75) {
             meddelande = "Du fick :" + poäng + ". Det är mer än 50% rätt.";
+            bakgrundsfärg = "yellow";
         } else {
             meddelande = "Du fick :" + poäng + "Det är mer än 75% rätt.";
+            bakgrundsfärg = "green";
         }
         resultat.innerHTML = meddelande;
+        resultat.style.backgroundColor = bakgrundsfärg;
+
         }
     });
 }
