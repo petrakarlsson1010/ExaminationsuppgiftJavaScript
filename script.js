@@ -51,14 +51,24 @@ let quizet = [
     },
 ]
 window.onload = function() {
-
+ 
 let frågor = document.querySelectorAll(".frågor");
 let nästabtn = document.querySelectorAll(".nästaBtn");
 let resultat = document.querySelector(".resultat");
+let mörktTema = document.querySelector(".mörktTema");
+let ljustTema = document.querySelector(".ljustTema");
 let aktuelfråga = 0;
 let poäng = 0;
 
 console.log(nästabtn);
+
+mörktTema.addEventListener("change",()=>{
+    document.body.classList.remove("ljustTema");
+});
+
+ljustTema.addEventListener("change",()=>{
+    document.body.classList.add("ljustTema");
+});
 
 frågor[aktuelfråga].style.display = "block";
 
