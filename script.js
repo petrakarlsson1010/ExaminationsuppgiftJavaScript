@@ -54,35 +54,41 @@ window.onload = function() {
 
 let frågor = document.querySelectorAll(".frågor");
 let nästabtn = document.querySelectorAll(".nästaBtn");
+let resultat = document.getElementsByClassName(".resultat");
 let poäng = 0;
 
 /*Styr knapptryckning på divarna, (vid tryck) borde
 diven försvinna och man kan gå vidare till nästa fråga. 
-fungerade förut men fungerar inte längre! Varför?
-for (let i = 0; i <nästabtn.length; i++){
-    nästabtn(i).onclick = function(){
+fungerade förut men fungerar inte längre! Varför?*/
+for (let i = 0; i < nästabtn.length; i++){
+    nästabtn[i].onclick = function(){
+        let val = frågor[i].querySelector("input[type='radio']:checked");
 
-        frågor[i].style.display = "none";
+        if (svar && svar.value === quizet[i].rättsvar){
+            poäng++;
+            }  
+        /*frågor[i].style.display = "none";
         if (frågor[i+1]){
             frågor[i+1].style.display = "block";
-        }
-    } */
+        }*/} 
+
+        
 //Borde styra poängräkningen, får den inte att fungera. 
+
 for (let i = 0; i <frågor.length; i++){
     
     let svar = frågor[i].querySelector("input:checked");
     
-    if (svar && svar.value === quizet[i].rättsvar){
-        poäng++;
-        }
+    
     }
 if (poäng < frågor.length * 0.5){
-    alert("Du fick: " + poäng + ",vilket är mindre än 50% rätt.");
+    meddelande("Du fick: " + poäng + ",vilket är mindre än 50% rätt.");
 }else if(poäng <= frågor.length * 0.75){
-    alert("Du fick :" + poäng + ". Det är mer än 50% rätt.");
+    meddelande("Du fick :" + poäng + ". Det är mer än 50% rätt.");
 }else{
-    alert("Du fick :" + poäng + "Det är mer än 75% rätt.");
+    meddelande("Du fick :" + poäng + "Det är mer än 75% rätt.");
 };
+resultat.style.displey = "block";
 };
 
 /*Fungerar inte.... 
@@ -98,7 +104,7 @@ for (let i = 0; i <nästabtn.length; i++){
         console.log("Du har fått mer än 70% rätt");
       }
 
-    };
-} */
+    }; */
+}
 
 
