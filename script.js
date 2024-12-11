@@ -55,7 +55,10 @@ window.onload = function() {
 let frågor = document.querySelectorAll(".frågor");
 let nästabtn = document.querySelectorAll(".nästaBtn");
 let resultat = document.getElementsByClassName(".resultat");
+let aktuelfråga = 0;
 let poäng = 0;
+
+frågor[aktuelfråga].style.display = "block";
 
 /*Styr knapptryckning på divarna, (vid tryck) borde
 diven försvinna och man kan gå vidare till nästa fråga. 
@@ -67,10 +70,7 @@ for (let i = 0; i < nästabtn.length; i++){
         if (svar && svar.value === quizet[i].rättsvar){
             poäng++;
             }  
-        /*frågor[i].style.display = "none";
-        if (frågor[i+1]){
-            frågor[i+1].style.display = "block";
-        }*/} 
+      } 
 
         
 //Borde styra poängräkningen, får den inte att fungera. 
@@ -90,21 +90,6 @@ if (poäng < frågor.length * 0.5){
 };
 resultat.style.displey = "block";
 };
-
-/*Fungerar inte.... 
-for (let i = 0; i <nästabtn.length; i++){
-    nästabtn[i].onclick = function(){
-      if(rättsvar<frågor.length * 0.5){
-        console.log("Du har fått mindre än 50% rätt");
-      }  
-      else if(rättsvar <= frågor.length * 0.78){
-        console.log("Du har fått mer än 50% rätt");
-      }
-      else{
-        console.log("Du har fått mer än 70% rätt");
-      }
-
-    }; */
 }
 
 

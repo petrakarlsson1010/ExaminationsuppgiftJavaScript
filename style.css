@@ -11,9 +11,9 @@ body {
     width: 90%;
     height: 120px;
     margin: 10px;
-    /*Borde göra så att divarna inte syns (ligger bakom varandra
+    /*Borde göra så att divarna inte syns (ligger bakom varandra*/
     display: none;
-   */
+   
 }
 /*Borde göra så att första diven syns, Men utan display 
 none på .frågor så syns alla divar, med display none syns 
